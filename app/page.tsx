@@ -1,4 +1,9 @@
-/** Add your relevant code here for the issue to reproduce */
+import dynamic from "next/dynamic";
+
+const ClientComponent = dynamic(() =>
+  import("./Client").then((mod) => mod.ClientComponent)
+);
+
 export default function Home() {
-  return null
+  return <ClientComponent />;
 }
